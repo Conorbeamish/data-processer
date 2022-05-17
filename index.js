@@ -1,11 +1,17 @@
 const express = require("express");
+const bodyParser = require('body-parser')
 const path = require("path");
+const authRoutes = require("./routes/auth");
 
+const port = process.env.PORT || 5000
 const app = express();
+app.use(bodyParser.json());
+app.use(bodyParser.urlencoded({ extended: true }));
 
 require("dotenv").config();
 
-const port = process.env.PORT || 5000
+//Routes
+app.use("/api/auth", authRoutes);
 
 //Serve React in Production
 if (process.env.NODE_ENV === 'production') {
