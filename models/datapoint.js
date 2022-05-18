@@ -29,10 +29,10 @@ const datapointSchema = new mongoose.Schema({
   }
 })
 
-//This function removes the dataset from associated entries
+//This function removes the datapoint from associated entries
 datapointSchema.pre("remove", async function(next){
   try{
-    //Remove dataset from associated user
+    //Remove datapoint from associated user
     let user = await User.findById(this.user);
     user.datapoints.remove(this.id);
     await user.save();

@@ -35,7 +35,7 @@ const getAllDatapoints = async function(req, res,next){
 
 const deleteDatapoint = async function(req, res, next){
   try {
-    let foundDatapoint = await db.Encounter.findById(req.params.datapoint_id);
+    let foundDatapoint = await db.Datapoint.findById(req.params.datapoint_id);
     await foundDatapoint.remove()
     return res.status(200).json(foundDatapoint);
   } catch (err) {

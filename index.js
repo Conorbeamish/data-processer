@@ -1,12 +1,14 @@
 const express = require("express");
 const bodyParser = require('body-parser')
 const path = require("path");
+const cors = require("cors");
 const authRoutes = require("./routes/auth");
 const datapointsRoutes = require("./routes/datapoints");
 const {loginRequired, correctUser}  = require("./middleware/auth");
 
 const port = process.env.PORT || 5000
 const app = express();
+app.use(cors());
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
 
