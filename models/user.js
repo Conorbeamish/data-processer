@@ -1,4 +1,5 @@
 const mongoose = require("mongoose");
+const bcrypt = require("bcrypt");
 
 const userSchema = new mongoose.Schema({
   username: {
@@ -10,33 +11,33 @@ const userSchema = new mongoose.Schema({
     type: String,
     required: true
   },
-  dataset: {
-    type: Array,
-    required: true
-  }
-})
+  datapoints: [{
+    type: mongoose.Schema.Types.ObjectId,
+    ref: "Datapoint"
+  }],
+});
 
 //Hash and Salt
 userSchema.pre("save", async function(next){
-  try {
-    if(!this.isModified("password")){
+  try{
+      if(!this.isModified("password")){
+          return next();
+      }
+      let hashedPassword = await bcrypt.hash(this.password, 10);
+      this.password = hashedPassword
       return next();
-    }
-    let hash = await bcrypt.hash(this.password, 10);
-    this.password = hash
-    return next();
-  } catch (err) {
-    return next(err);
+  } catch (err){
+      return next(err);
   }
 });
 
-//Validate password
+//Check password
 userSchema.methods.comparePassword = async function(attemptPassword, next){
-  try {
-    let isMatch = await bcrypt.compare(attemptPassword, this.password);
-    return isMatch;
-  } catch (err) {
-    return next(err);
+  try{
+      let isMatch = await bcrypt.compare(attemptPassword, this.password);
+      return isMatch;
+  } catch (err){
+      return next(err);
   }
 }
 
