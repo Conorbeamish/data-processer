@@ -2,7 +2,8 @@ const express = require("express");
 const bodyParser = require('body-parser')
 const path = require("path");
 const authRoutes = require("./routes/auth");
-const datapointsRoutes = require("./routes/datapoints")
+const datapointsRoutes = require("./routes/datapoints");
+const {loginRequired, correctUser}  = require("./middleware/auth");
 
 const port = process.env.PORT || 5000
 const app = express();
@@ -13,7 +14,11 @@ require("dotenv").config();
 
 //Routes
 app.use("/api/auth", authRoutes);
-app.use("/api/users/:id/datapoints", datapointsRoutes);
+app.use("/api/users/:id/datapoints", 
+  loginRequired,
+  correctUser,
+  datapointsRoutes
+);
 
 //Serve React in Production
 if (process.env.NODE_ENV === 'production') {
