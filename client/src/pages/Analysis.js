@@ -51,9 +51,6 @@ const Analysis = () => {
   //Get differences between Groups
   const  groupADifference = getAverage(groupAAfter) - getAverage(groupABefore)
   const groupBDifference = getAverage(groupBAfter) - getAverage(groupBBefore)
-
-  console.log(groupADifference)
-  console.log(groupBDifference)
   
   //Data for bar chart
   const beforeData = [{ x: "Group A Before", y: getAverage(groupABefore) }, { x: "Group B Before", y: getAverage(groupBBefore) }];
