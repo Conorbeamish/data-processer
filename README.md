@@ -5,6 +5,8 @@ Pharma Visualizer
 MongoDB, Expressjs, React/Redux, Nodejs
 </p>
 
+[See live site](https://pharma-visualizer.herokuapp.com/)
+
 > Pharma Visualizer is a fullstack implementation in MongoDB, Expressjs, React, Nodejs.
 
 This application allows users to sign up/ login and enter data about patient scores in two drug trials.
