@@ -3,7 +3,7 @@ import UserContext from '../UserContext'
 import axios from 'axios';
 import jwtDecode from "jwt-decode";
 import { setTokenHeader } from '../utils/apiCall';
-import { useNavigate } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 
 
 const AuthForm = ({loginType}) => {
@@ -63,8 +63,9 @@ const AuthForm = ({loginType}) => {
           onChange={e => setUserFormData({...userFormData, password: e.target.value})}
         />
         <button type="submit">
-          {loginType}
+          {loginType == "signup" ? "Sign up" : "Sign In"}
         </button>
+      
 
     </form>
   );
