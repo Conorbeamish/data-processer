@@ -103,7 +103,7 @@ const Datapoints = () => {
     <p>
       Please enter some data points below, currently you can assign a person to group A or B and then give them a rating on a scale of 1-10 of a measured effect
     </p>
-    <p><em>One example might be measuring the effects of a new painkiller where Group A has taken the drug and Group B is the control with them rating their pain before and and after out of 10</em></p>
+    <p><em>One example might be measuring the effects of a new painkiller where Group A has taken the drug and Group B is the control with them rating their pain before and after out of 10</em></p>
     <DatapointsForm userData={userData} setUserData={setUserData}/>
       <DataPointsContainerStyled>
         {DatapointList}
