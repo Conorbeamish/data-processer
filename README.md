@@ -67,8 +67,10 @@ npm run dev // run it locally and start both the server and the client
 # Whats next
 
 * Improve Error Handling on client & server 
+* Restrict user signup and password length for security
 * Make responsive for mobile
 * Include more analytical charts
+* Fix Floating Point Issue and negative data values
 * Create multiple datasets for users 
 * Polish off styling
 * Refactor client, extract API call function 
