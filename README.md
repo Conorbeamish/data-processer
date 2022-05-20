@@ -41,7 +41,7 @@ $ npm i       // npm install packages
 
 // deployment for client app
 $ npm run build // this will compile the react code using webpack and generate a folder called docs in the root level
-$ npm run start // this will run the files in docs, this behavior is exactly the same how gh-pages will run your static site
+$ npm run start // this will run the files in docs
 ```
 
 ## Server-side usage(PORT: 5000)
@@ -57,6 +57,5 @@ run the script at the first level:
 
 ```terminal
 $ npm i       // npm install packages
-$ npm run dev // run it locally and start both the server and the client       
-$ npm run build // this will build the server code to es5 js codes and generate a dist file
+$ npm run dev // run it locally and start both the server and the client     
 ```
