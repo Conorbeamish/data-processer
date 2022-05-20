@@ -16,11 +16,9 @@ Data is processed and presented back to the user in the form of a chart.
 ```terminal
 git clone https://github.com/Conorbeamish/data-processor.git
 ```
-Make sure you are in the root directory of the project.
 
-```terminal
-npm i
-```
+The srver is installed from the root directory, the client is installed from /client 
+Both can be run concurrently from root directory, see below
 
 ## project structure
 ```terminal
