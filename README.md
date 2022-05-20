@@ -14,8 +14,8 @@ Data is processed and presented back to the user in the form of a chart.
 
 ## clone or download
 ```terminal
-$ git clone https://github.com/Conorbeamish/data-processor.git
-$ npm i
+git clone https://github.com/Conorbeamish/data-processor.git
+npm i
 ```
 
 ## project structure
@@ -38,12 +38,12 @@ client/
 
 ## Client-side usage(PORT: 3000)
 ```terminal
-$ cd client   // go to client folder
-$ npm i       // npm install packages
+cd client   // go to client folder
+npm i       // npm install packages
 
 // deployment for client app
-$ npm run build // this will compile the react code using webpack and generate a folder called docs in the root level
-$ npm run start // this will run the files in docs
+npm run build // this will compile the react code using webpack and generate a folder called docs in the root level
+npm run start // this will run the files in docs
 ```
 
 ## Server-side usage(PORT: 5000)
@@ -58,8 +58,8 @@ run the script at the first level:
 ### Start
 
 ```terminal
-$ npm i       // npm install packages
-$ npm run dev // run it locally and start both the server and the client     
+npm i       // npm install packages
+npm run dev // run it locally and start both the server and the client     
 ```
 
 # Whats next
