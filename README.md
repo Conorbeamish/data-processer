@@ -74,3 +74,4 @@ npm run dev // run it locally and start both the server and the client
 * Create multiple datasets for users 
 * Polish off styling
 * Refactor client, extract API call function 
+* Add flavicon, change title, add metadata
