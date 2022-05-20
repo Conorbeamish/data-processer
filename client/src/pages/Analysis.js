@@ -60,12 +60,18 @@ const Analysis = () => {
 
   return ( <AnalysisStyled>
     <Link to={dataPointsUrl}> Back to Data</Link>
-    <p>
-      As can be seen below the difference in averages of Group of group A is {groupADifference}
-    </p>
-    <p>
-      The difference in averages of Group B is {groupBDifference}
-    </p>
+    {!Number.isNaN(groupADifference) && 
+      <p>
+        As can be seen below the difference in averages of Group of group A is {groupADifference}
+      </p>}
+    {!Number.isNaN(groupBDifference) &&
+      <p>
+        The difference in averages of Group B is {groupBDifference}
+      </p>
+    }
+    {userData?.userDatapoints.length === 0  && 
+      <p>Try entering some data!</p>
+    }
     <p>
       {groupADifference > groupBDifference && `We can conclude that group A had a stronger effect by an average score of ${groupADifference - groupBDifference} points`}
       {groupBDifference > groupADifference && `We can conclude that group B had a stronger effect by an average score of ${groupBDifference - groupADifference} points`}
