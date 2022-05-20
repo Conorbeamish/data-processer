@@ -49,8 +49,8 @@ const Analysis = () => {
   const groupBAfter = groupBData.map(array => array.measureAfter);
 
   //Get differences between Groups
-  const  groupADifference = getAverage(groupAAfter) - getAverage(groupBBefore)
-  const groupBDifference = getAverage(groupBAfter) - getAverage(groupABefore)
+  const  groupADifference = getAverage(groupAAfter) - getAverage(groupABefore)
+  const groupBDifference = getAverage(groupBAfter) - getAverage(groupBBefore)
 
   
   //Data for bar chart
