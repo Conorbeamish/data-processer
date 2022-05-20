@@ -37,9 +37,9 @@ const AuthForm = ({loginType}) => {
         setUserData({...userInfo, userDatapoints})
       }).then(
         navigate("/")
-      ).catch(err => alert(err))
+      ).catch(err => alert(`Something has gone wrong refresh and try again - ${err.response.status}`))
     })
-    .catch(err => alert(err))
+    .catch(err => alert(`Invalid Username or Username Password Combination - ${err.response.status}`))
   }
   
 

@@ -80,7 +80,7 @@ const Datapoints = () => {
       setUserData({...userData, userDatapoints: updatedDatapoints})
     })
     
-    .catch(err => alert(err))
+    .catch(err => alert(`Something has gone wrong refresh and try again - ${err.response.status}`))
   }
 
   const DatapointList = userData?.userDatapoints.map(datapoint =>{
