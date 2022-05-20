@@ -20,6 +20,7 @@ const DatapointStyles = styled.div`
   form {
     display: flex ;
     justify-content: space-evenly ;
+    margin-top: 1rem ;
     button{
       text-decoration:none ;
       padding: 0 1rem ;
@@ -77,7 +78,7 @@ const Datapoints = () => {
       setUserData({...userData, userDatapoints: updatedDatapoints})
     })
     
-    .catch(err => console.log(err))
+    .catch(err => alert(err))
   }
 
   const DatapointList = userData?.userDatapoints.map(datapoint =>{
@@ -97,6 +98,10 @@ const Datapoints = () => {
     <Link to={analysisUrl}>
       Analysis
     </Link>
+    <p>
+      Please enter some data points below, currently you can assign a person to group A or B and then give them a rating on a scale of 1-10 of a measured effect
+    </p>
+    <p><em>One example might be measuring the effects of a new painkiller where Group A has taken the drug and Group B is the control with them rating their pain before and and after out of 10</em></p>
     <DatapointsForm userData={userData} setUserData={setUserData}/>
       <DataPointsContainerStyled>
         {DatapointList}

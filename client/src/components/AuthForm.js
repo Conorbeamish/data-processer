@@ -37,9 +37,9 @@ const AuthForm = ({loginType}) => {
         setUserData({...userInfo, userDatapoints})
       }).then(
         navigate("/")
-      ).catch(err => console.log(err))
+      ).catch(err => alert(err))
     })
-    .catch(err => console.log(err))
+    .catch(err => alert(err))
   }
   
 

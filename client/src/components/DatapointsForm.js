@@ -31,7 +31,7 @@ const DataPointsForm = ({userData, setUserData}) => {
         measureAfter: 1,
       })
     })
-    .catch(err => console.log(err))
+    .catch(err => alert(err))
   }
 
   return (

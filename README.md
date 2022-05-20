@@ -59,3 +59,11 @@ run the script at the first level:
 $ npm i       // npm install packages
 $ npm run dev // run it locally and start both the server and the client     
 ```
+
+# Whats next
+
+* Improve Error Handling on client & server 
+* Make responsive for mobile
+* Include more analytical charts
+* Create multiple datasets for users 
+* Polish off styling 
