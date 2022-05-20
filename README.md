@@ -15,6 +15,10 @@ Data is processed and presented back to the user in the form of a chart.
 ## clone or download
 ```terminal
 git clone https://github.com/Conorbeamish/data-processor.git
+```
+Make sure you are in the root directory of the project.
+
+```terminal
 npm i
 ```
 
