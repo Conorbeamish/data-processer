@@ -25,7 +25,7 @@ function App() {
         const userInfo = jwtDecode(localStorage.jwtToken)
         axios({
           method: "get",
-          url: `http://localhost:5000/api/users/${userInfo.id}/datapoints`,
+          url: `/api/users/${userInfo.id}/datapoints`,
         }).then(res =>{
           const userDatapoints = res.data
           setUserData({...userInfo, userDatapoints })

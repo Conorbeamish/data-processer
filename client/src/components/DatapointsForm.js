@@ -15,7 +15,7 @@ const DataPointsForm = ({userData, setUserData}) => {
     e.preventDefault();
     axios({
       method: "post",
-      url: `http://localhost:5000/api/users/${userData.id}/datapoints`,
+      url: `/api/users/${userData.id}/datapoints`,
       data: formData
     })
     .then(res =>{

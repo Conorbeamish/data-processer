@@ -72,7 +72,7 @@ const Datapoints = () => {
   const deleteDatapoint = (_id) => {
     axios({
       method: "delete",
-      url: `http://localhost:5000/api/users/${userData.id}/datapoints/${_id}`,
+      url: `/api/users/${userData.id}/datapoints/${_id}`,
     
     })
     .then((res) => {

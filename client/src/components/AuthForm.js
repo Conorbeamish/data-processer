@@ -22,7 +22,7 @@ const AuthForm = ({loginType}) => {
     e.preventDefault();
     axios({
       method: "post",
-      url: `http://localhost:5000/api/auth/${loginType}`,
+      url: `/api/auth/${loginType}`,
       data: userFormData
     })
     .then(res =>{
@@ -31,7 +31,7 @@ const AuthForm = ({loginType}) => {
       const userInfo = jwtDecode(res.data.token);
       axios({
         method: "get",
-        url: `http://localhost:5000/api/users/${userInfo.id}/datapoints`,
+        url: `/api/users/${userInfo.id}/datapoints`,
       }).then(res =>{
         const userDatapoints = res.data
         setUserData({...userInfo, userDatapoints})

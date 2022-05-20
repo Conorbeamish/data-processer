@@ -5,8 +5,6 @@ import {
   XAxis,
   YAxis,
   VerticalBarSeries,
-  VerticalBarSeriesCanvas,
-  LabelSeries
 } from "react-vis";
 import React, { useContext} from 'react';
 import UserContext from '../UserContext';
