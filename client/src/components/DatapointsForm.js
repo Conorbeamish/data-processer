@@ -10,7 +10,7 @@ const DataPointsForm = ({userData, setUserData}) => {
     measureAfter: "1",
   })
 
-  //Posts new user to data base, updates userData
+  //Posts new user to database, updates userData
   const handleSubmit = (e) => {
     e.preventDefault();
     axios({

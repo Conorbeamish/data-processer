@@ -67,6 +67,8 @@ const Datapoints = () => {
 
   const {userData, setUserData} = useContext(UserContext);
   const analysisUrl = `/user/${userData.id}/analysis`
+
+  //Remove datapoint from both context and database
   const deleteDatapoint = (_id) => {
     axios({
       method: "delete",

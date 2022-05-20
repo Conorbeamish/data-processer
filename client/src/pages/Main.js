@@ -34,23 +34,19 @@ const Main = () => {
       <p>
         This application lets you compare the effects of two pharmaceutical drugs, scoring the a desired criteria before and after use.
       </p>
-
-    <p>
-      The data is then analysed and presented in a visualisation to better understand the effectiveness of the medication
-    </p>
-    <p>
-      Get started below
-    </p>
+      <p>
+        The data is then analysed and presented in a visualisation to better understand the effectiveness of the medication
+      </p>
+      <p>
+        Get started below
+      </p>
       {userData?.username ?
-      <div>
-        <Link to={dataPointsUrl}>
-          Dataset
-        </Link> 
-      </div>
-        
-      
-        
-        : 
+        <div>
+          <Link to={dataPointsUrl}>
+            Dataset
+          </Link> 
+        </div>
+      : 
         <div>
         <Link to="/signup" >
           Sign Up

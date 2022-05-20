@@ -66,4 +66,5 @@ $ npm run dev // run it locally and start both the server and the client
 * Make responsive for mobile
 * Include more analytical charts
 * Create multiple datasets for users 
-* Polish off styling 
+* Polish off styling
+* Refactor client, extract API call function 

@@ -28,26 +28,34 @@ const AnalysisStyled = styled.div`
 `
 
 const Analysis = () => {
+
   const {userData, setUserData} = useContext(UserContext);
-  const dataPoints = userData?.userDatapoints
   
+  const dataPointsUrl = userData ? `/user/${userData.id}/datapoints` : ""
+  
+  //Returns average of two numbers
+  const getAverage = (arr) => {
+    return arr.reduce((a, b) => a + b, 0) / arr.length;
+  }
+
+  const dataPoints = userData?.userDatapoints
+
+  //Split datapoints into two groups
   const groupAData = dataPoints.filter(dataPoint => dataPoint.drug === "Group A");
   const groupBData = dataPoints.filter(dataPoint => dataPoint.drug === "Group B");
 
+  //Split measurements for analysis
   const groupABefore = groupAData.map(array => array.measureBefore);
   const groupAAfter = groupAData.map(array => array.measureAfter);
   const groupBBefore = groupBData.map(array => array.measureBefore);
   const groupBAfter = groupBData.map(array => array.measureAfter);
 
-  const getAverage = (arr) => {
-    return arr.reduce((a, b) => a + b, 0) / arr.length;
-  }
-
+  //Get differences between Groups
   const  groupADifference = getAverage(groupAAfter) - getAverage(groupBBefore)
   const groupBDifference = getAverage(groupBAfter) - getAverage(groupABefore)
 
-  const dataPointsUrl = userData ? `/user/${userData.id}/datapoints` : ""
-
+  
+  //Data for bar chart
   const beforeData = [{ x: "Group A Before", y: getAverage(groupABefore) }, { x: "Group B Before", y: getAverage(groupBBefore) }];
   const afterData = [{ x: "Group A After", y: getAverage(groupAAfter) }, { x: "Group B After", y: getAverage(groupBAfter)}];
   
@@ -67,7 +75,6 @@ const Analysis = () => {
 
     </p>
     <XYPlot
-
         animation
         xType="ordinal"
         width={500}
